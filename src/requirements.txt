@@ -1,0 +1,4 @@
+jupyterlab
+psycopg[binary]
+pandas
+python-dotenv
