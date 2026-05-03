@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: ai-control-queue-postgres
+    environment:
+      POSTGRES_DB: ai_queue
+      POSTGRES_USER: ai_queue_user
+      POSTGRES_PASSWORD: ai_queue_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+
+volumes:
+  postgres_data:
